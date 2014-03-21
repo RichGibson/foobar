@@ -94,7 +94,7 @@ MANAGERS = ADMINS
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.localhost', '127.0.0.1']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -103,7 +103,7 @@ ALLOWED_HOSTS = []
 # timezone as the operating system.
 # If running in a Windows environment this must be set to the same as your
 # system time zone.
-TIME_ZONE = None
+TIME_ZONE = 'UTC'
 
 # If you set this to True, Django will use timezone-aware datetimes.
 USE_TZ = True
@@ -165,9 +165,9 @@ FILE_UPLOAD_PERMISSIONS = 0o644
 DATABASES = {
     "default": {
         # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
         # DB name or path to database file if using sqlite3.
-        "NAME": "",
+        "NAME": "techtask",
         # Not used with sqlite3.
         "USER": "",
         # Not used with sqlite3.
@@ -178,6 +178,7 @@ DATABASES = {
         "PORT": "",
     }
 }
+
 
 
 #########
@@ -248,6 +249,7 @@ INSTALLED_APPS = (
     "mezzanine.pages",
     "mezzanine.galleries",
     "mezzanine.twitter",
+    "techtask",
     #"mezzanine.accounts",
     #"mezzanine.mobile",
 )
